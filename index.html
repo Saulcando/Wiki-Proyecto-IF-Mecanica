@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki · Efecto Doppler mediante circuitos electrónicos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["$$", "$$"]] },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"
+      defer
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="progress"></div>
+
+    <header>
+      <div class="header-actions">
+        <div class="icon-btn" id="menuToggle" title="Menú">☰</div>
+        <div class="brand">
+          <span class="dot"></span> Doppler · Wiki de Investigación
+        </div>
+      </div>
+      <div class="header-actions">
+        <div id="searchBox">
+          <span class="mono" style="font-size: 12px; color: var(--gray-mid)"
+            >⌕</span
+          >
+          <input id="searchInput" placeholder="Buscar en la wiki..." />
+        </div>
+        <div class="icon-btn" id="themeToggle" title="Cambiar tema">◐</div>
+      </div>
+    </header>
+
+    <div class="shell">
+      <aside id="sidebar">
+        <div class="navgroup">
+          <div class="navgroup-title">Inicio</div>
+          <a class="navlink" href="#inicio">Portada del proyecto</a>
+        </div>
+        <div class="navgroup">
+          <div class="navgroup-title">Fundamentación</div>
+          <a class="navlink" href="#m1">01 · Material didáctico en Física</a>
+          <a class="navlink" href="#m2">02 · Tecnologías educativas</a>
+          <a class="navlink" href="#m3"
+            >03 · Circuitos electrónicos educativos</a
+          >
+          <a class="navlink" href="#m4">04 · Ondas sonoras</a>
+          <a class="navlink" href="#m5">05 · Efecto Doppler</a>
+        </div>
+        <div class="navgroup">
+          <div class="navgroup-title">Desarrollo del prototipo</div>
+          <a class="navlink" href="#m6">06 · Implementación del material</a>
+          <a class="navlink" href="#m7">07 · Uso de Phyphox</a>
+        </div>
+        <div class="navgroup">
+          <div class="navgroup-title">Investigación</div>
+          <a class="navlink" href="#m8">08 · Metodología</a>
+          <a class="navlink" href="#m9">09 · Resultados esperados</a>
+        </div>
+        <div class="navgroup">
+          <div class="navgroup-title">Referencias</div>
+          <a class="navlink" href="#m10">10 · Bibliografía APA 7</a>
+          <a class="navlink" href="#m11">11 · Anexos</a>
+        </div>
+      </aside>
+
+      <main>
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="inicio">
+          <span class="eyebrow"
+            >Investigación formativa · Física experimental</span
+          >
+          <h1>
+            Diseño e implementación de un material didáctico basado en circuitos
+            electrónicos para la enseñanza del efecto Doppler
+          </h1>
+          <p class="lead">
+            Una plataforma de consulta que reúne la fundamentación teórica, el
+            prototipo electrónico, el uso de Phyphox y la ruta metodológica para
+            demostrar experimentalmente cómo el movimiento relativo entre una
+            fuente sonora y un observador modifica la frecuencia percibida.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#m1">Comenzar la lectura →</a>
+            <a class="btn btn-ghost" href="#m5">Ir directo al efecto Doppler</a>
+          </div>
+          <svg id="dopplerViz" viewBox="0 0 800 220"></svg>
+          <div class="quickgrid">
+            <div class="quickcard">
+              <div class="num">01–02</div>
+              <h4>Fundamentos pedagógicos y tecnológicos</h4>
+            </div>
+            <div class="quickcard">
+              <div class="num">03</div>
+              <h4>Circuito electrónico educativo</h4>
+            </div>
+            <div class="quickcard">
+              <div class="num">04–05</div>
+              <h4>Ondas sonoras y efecto Doppler</h4>
+            </div>
+            <div class="quickcard">
+              <div class="num">07</div>
+              <h4>Medición con Phyphox</h4>
+            </div>
+            <div class="quickcard">
+              <div class="num">10</div>
+              <h4>Bibliografía APA 7</h4>
+            </div>
+          </div>
+        </section>
+
+        <div class="content-wrap">
+          <!-- ============ MODULE 1 ============ -->
+          <section class="module reveal" id="m1">
+            <div class="module-kicker"><div class="module-index">01</div></div>
+            <h2>Material didáctico en la enseñanza de la Física</h2>
+            <p class="subtitle">Por qué un circuito y no solo una ecuación</p>
+
+            <p>
+              Un material didáctico puede entenderse como un conjunto de
+              recursos diseñados con una intención educativa específica, cuyo
+              propósito es favorecer el aprendizaje mediante la interacción del
+              estudiante con contenidos, herramientas y actividades que
+              promueven la construcción del conocimiento. Estos recursos pueden
+              ser físicos, digitales o una combinación de ambos, según los
+              objetivos de aprendizaje planteados.
+            </p>
+
+            <p>
+              En la enseñanza de la Física esta idea cobra especial relevancia
+              porque muchos fenómenos —como el efecto Doppler— exigen modelos,
+              simulaciones o experiencias que permitan comprender conceptos
+              abstractos mediante la observación y la manipulación directa, en
+              lugar de quedarse únicamente en la representación matemática.
+            </p>
+
+            <h3>Aprendizaje significativo y experimentación</h3>
+            <p>
+              El material didáctico experimental favorece un aprendizaje
+              significativo porque permite que el estudiante relacione sus
+              conocimientos previos con los nuevos conceptos adquiridos mediante
+              la experiencia directa. La manipulación de instrumentos y la
+              interpretación de resultados contribuyen al desarrollo del
+              pensamiento científico y del razonamiento crítico, complementando
+              la enseñanza tradicional basada únicamente en ecuaciones.
+            </p>
+
+            <div class="callout">
+              Mediante dispositivos electrónicos, sensores y herramientas
+              digitales es posible transformar un fenómeno ondulatorio difícil
+              de visualizar —como el sonido y el efecto Doppler— en una
+              experiencia observable e interactiva.
+            </div>
+
+            <h3>Beneficios frente a la enseñanza puramente teórica</h3>
+            <ul>
+              <li>
+                El estudiante deja de ser receptor pasivo y participa
+                activamente en la comprobación de principios físicos.
+              </li>
+              <li>
+                Se desarrollan habilidades de observación, medición y análisis
+                de datos.
+              </li>
+              <li>
+                Se fortalece la relación entre el modelo matemático y la
+                evidencia experimental.
+              </li>
+            </ul>
+
+            <div class="related">
+              <a href="#m3"
+                >Ver módulo 03 · Circuitos electrónicos educativos</a
+              >
+              <a href="#m5">Ver módulo 05 · Efecto Doppler</a>
+            </div>
+          </section>
+
+          <!-- ============ MODULE 2 ============ -->
+          <section class="module reveal" id="m2">
+            <div class="module-kicker"><div class="module-index">02</div></div>
+            <h2>Tecnologías educativas aplicadas a la Física</h2>
+            <p class="subtitle">
+              Del sensor del bolsillo al laboratorio de datos
+            </p>
+
+            <p>
+              Las tecnologías educativas son el conjunto de herramientas,
+              recursos y estrategias que permiten mejorar los procesos de
+              enseñanza-aprendizaje mediante la incorporación de medios
+              digitales y dispositivos tecnológicos. En la educación científica,
+              su aplicación crea ambientes interactivos donde el estudiante
+              explora fenómenos, obtiene datos y construye explicaciones basadas
+              en evidencia.
+            </p>
+
+            <p>
+              Estas herramientas han permitido superar limitaciones de los
+              métodos tradicionales al ofrecer nuevas formas de representar
+              fenómenos físicos mediante simulaciones, sensores, plataformas
+              digitales y sistemas de adquisición de datos, además de impulsar
+              metodologías activas como el aprendizaje basado en proyectos y la
+              experimentación asistida por computadora.
+            </p>
+
+            <h3>El teléfono inteligente como instrumento científico</h3>
+            <p>
+              Los teléfonos inteligentes incorporan sensores —micrófono,
+              acelerómetro, magnetómetro— que pueden emplearse como instrumentos
+              de medición dentro de actividades educativas. Aplicaciones como
+              Phyphox aprovechan estos sensores para realizar experimentos
+              relacionados con sonido, movimiento y otras magnitudes físicas,
+              convirtiendo un dispositivo cotidiano en un laboratorio portátil.
+            </p>
+
+            <div class="callout">
+              En este proyecto, las tecnologías educativas cumplen una función
+              esencial: integrar una fuente sonora controlada, un circuito
+              generador de señal y una aplicación móvil de medición para
+              registrar experimentalmente los cambios de frecuencia asociados al
+              efecto Doppler.
+            </div>
+
+            <div class="related">
+              <a href="#m7">Ver módulo 07 · Uso de Phyphox</a>
+            </div>
+          </section>
+
+          <!-- ============ MODULE 3 ============ -->
+          <section class="module reveal" id="m3">
+            <div class="module-kicker"><div class="module-index">03</div></div>
+            <h2>Circuitos electrónicos educativos</h2>
+            <p class="subtitle">Arquitectura del generador de señal sonora</p>
+
+            <p>
+              Los circuitos electrónicos educativos son sistemas diseñados para
+              representar y controlar fenómenos físicos mediante componentes
+              accesibles. Permiten un aprendizaje interdisciplinario porque
+              integran conocimientos de física, electrónica, programación y
+              tecnología, relacionando conceptos teóricos con aplicaciones
+              reales presentes en dispositivos cotidianos.
+            </p>
+
+            <p>
+              Los microcontroladores y módulos electrónicos han ganado terreno
+              en el ámbito educativo por su bajo costo, facilidad de
+              programación y capacidad de interactuar con sensores y actuadores.
+              Plataformas como Arduino permiten diseñar sistemas experimentales
+              capaces de generar señales, registrar mediciones y controlar
+              procesos físicos.
+            </p>
+
+            <h3>Componentes del sistema</h3>
+            <table class="compare-table">
+              <tr>
+                <th>Componente</th>
+                <th>Función dentro del prototipo</th>
+              </tr>
+              <tr>
+                <td>Microcontrolador</td>
+                <td>Procesa información y controla el sistema.</td>
+              </tr>
+              <tr>
+                <td>Fuente sonora</td>
+                <td>Genera ondas acústicas mediante una señal eléctrica.</td>
+              </tr>
+              <tr>
+                <td>Sensores</td>
+                <td>
+                  Miden variables físicas y las convierten en señales
+                  eléctricas.
+                </td>
+              </tr>
+              <tr>
+                <td>Módulos de comunicación</td>
+                <td>Transfieren datos entre dispositivos electrónicos.</td>
+              </tr>
+              <tr>
+                <td>Elementos de visualización</td>
+                <td>
+                  Facilitan la interpretación de resultados mediante indicadores
+                  o pantallas.
+                </td>
+              </tr>
+            </table>
+
+            <p>
+              En el material propuesto, el circuito cumple la función de generar
+              una señal sonora con características controladas, de modo que sea
+              posible analizar la variación de frecuencia producida por el
+              movimiento relativo entre la fuente y el observador: un sistema
+              electrónico genera una frecuencia conocida mientras Phyphox
+              registra la frecuencia percibida, permitiendo comparar el
+              resultado experimental con el modelo teórico.
+            </p>
+
+            <div class="callout pending">
+              <b>Pendiente de completar:</b> esquemático del circuito, diagrama
+              de bloques, fotografías del prototipo y lista específica de
+              componentes (modelo de microcontrolador, buzzer/parlante, valores
+              de resistencias, etc.). Esta sección está lista para recibir esos
+              materiales cuando los tengas disponibles.
+            </div>
+
+            <div class="related">
+              <a href="#m6">Ver módulo 06 · Implementación del material</a>
+            </div>
+          </section>
+
+          <!-- ============ MODULE 4 ============ -->
+          <section class="module reveal" id="m4">
+            <div class="module-kicker"><div class="module-index">04</div></div>
+            <h2>Ondas sonoras</h2>
+            <p class="subtitle">
+              Las variables que hacen posible medir el Doppler
+            </p>
+
+            <p>
+              Las ondas sonoras son perturbaciones mecánicas que se propagan en
+              un medio material debido a la vibración de sus partículas,
+              generando regiones de compresión y rarefacción que transportan
+              energía desde una fuente hasta un receptor. Por su naturaleza
+              mecánica, el sonido no puede propagarse en el vacío. Una fuente
+              sonora —un parlante o un buzzer electrónico— genera una onda
+              longitudinal, en la que la dirección de vibración coincide con la
+              dirección de propagación de la energía.
+            </p>
+
+            <h3>Frecuencia</h3>
+            <p>
+              La frecuencia es el número de ciclos que realiza una onda por
+              segundo, medida en hertz (Hz); en el sonido determina la altura
+              tonal, distinguiendo sonidos graves de agudos.
+            </p>
+            <div class="card eq">
+              $$ f = \dfrac{1}{T} $$
+              <div class="vars">
+                donde <code>f</code> es la frecuencia y <code>T</code> el
+                período de oscilación.
+              </div>
+            </div>
+            <div class="card eq">
+              $$ v = f\lambda $$
+              <div class="vars">
+                <code>v</code>: velocidad de propagación · <code>f</code>:
+                frecuencia · <code>λ</code>: longitud de onda.
+              </div>
+            </div>
+            <p>
+              Esta última magnitud, la frecuencia, es la variable central del
+              efecto Doppler: el fenómeno consiste precisamente en la variación
+              aparente de la frecuencia observada debido al movimiento relativo
+              entre fuente y receptor.
+            </p>
+
+            <h3>Longitud de onda</h3>
+            <div class="card eq">
+              $$ \lambda = \dfrac{v}{f} $$
+              <div class="vars">
+                Si la frecuencia aumenta y <code>v</code> permanece constante,
+                <code>λ</code> disminuye. En el efecto Doppler, el movimiento de
+                la fuente altera la separación entre frentes de onda.
+              </div>
+            </div>
+
+            <h3>Intensidad sonora y decibelios</h3>
+            <p>
+              La intensidad sonora cuantifica la energía acústica que atraviesa
+              una unidad de área en un intervalo de tiempo.
+            </p>
+            <div class="card eq">
+              $$ I = \dfrac{P}{A} \qquad\qquad I = \dfrac{P}{4\pi r^2} $$
+              <div class="vars">
+                <code>I</code>: intensidad (W/m²) · <code>P</code>: potencia
+                acústica · <code>A</code>: área · <code>r</code>: distancia a la
+                fuente puntual.
+              </div>
+            </div>
+            <p>
+              Debido a que el oído humano percibe un rango de intensidades
+              extremadamente amplio, se usa una escala logarítmica: el nivel de
+              intensidad sonora, en decibelios (dB).
+            </p>
+            <div class="card eq">
+              $$ \beta = 10\, \log_{10}\!\left(\dfrac{I}{I_0}\right) $$
+              <div class="vars">
+                <code>β</code>: nivel de intensidad (dB) ·
+                <code>I₀ = 1×10⁻¹² W/m²</code>: intensidad de referencia, umbral
+                de audición a ≈1000 Hz.
+              </div>
+            </div>
+            <p>
+              Un incremento de 10 dB corresponde aproximadamente a multiplicar
+              por diez la intensidad física del sonido. Es importante distinguir
+              intensidad de sonoridad: la primera es una medida física objetiva;
+              la segunda depende de la respuesta del oído a distintas
+              frecuencias. En el análisis del efecto Doppler, la variable
+              relevante es la frecuencia, mientras que la intensidad y los
+              decibelios funcionan como recurso complementario de análisis de la
+              señal.
+            </p>
+
+            <div class="related">
+              <a href="#m5">Ver módulo 05 · Efecto Doppler</a>
+            </div>
+          </section>
+
+          <!-- ============ MODULE 5 ============ -->
+          <section class="module reveal" id="m5">
+            <div class="module-kicker"><div class="module-index">05</div></div>
+            <h2>Efecto Doppler</h2>
+            <p class="subtitle">El corazón teórico del proyecto</p>
+
+            <p>
+              El efecto Doppler es el cambio aparente de la frecuencia de una
+              onda percibida por un observador cuando existe movimiento relativo
+              entre la fuente emisora y el receptor. Descrito inicialmente por
+              Christian Doppler en 1842, se aplica tanto a ondas mecánicas (el
+              sonido) como a ondas electromagnéticas (la luz).
+            </p>
+
+            <p>
+              Un ejemplo cotidiano: mientras una ambulancia se aproxima, la
+              sirena se percibe más aguda; tras pasar junto al observador, se
+              percibe más grave — aunque la frecuencia emitida por la fuente no
+              cambie en ningún momento.
+            </p>
+
+            <svg
+              id="dopplerDetail"
+              viewBox="0 0 760 200"
+              style="
+                width: 100%;
+                height: 200px;
+                background: var(--bg-alt);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                margin: 16px 0;
+              "
+            ></svg>
+
+            <h3>Principio físico</h3>
+            <p>
+              Cuando la fuente está en reposo, las ondas se distribuyen
+              uniformemente a su alrededor. Cuando se mueve, cada nuevo frente
+              se origina desde una posición distinta, comprimiendo o separando
+              los frentes de onda según la dirección del movimiento.
+            </p>
+            <div class="card eq">
+              Fuente acercándose: $$ \lambda' < \lambda \quad\Rightarrow\quad f'
+              > f $$ Fuente alejándose: $$ \lambda' > \lambda
+              \quad\Rightarrow\quad f' < f $$
+            </div>
+
+            <h3>Ecuación general</h3>
+            <div class="card eq">
+              $$ f' = f\left(\dfrac{v \pm v_o}{v \mp v_s}\right) $$
+              <div class="vars">
+                <code>f′</code>: frecuencia observada · <code>f</code>:
+                frecuencia emitida · <code>v</code>: velocidad del sonido en el
+                medio · <code>v₀</code>: velocidad del observador ·
+                <code>v_s</code>: velocidad de la fuente.
+              </div>
+            </div>
+            <ul>
+              <li>
+                Signo <b>+</b> para el observador cuando se aproxima a la
+                fuente; <b>−</b> cuando se aleja.
+              </li>
+              <li>
+                Signo <b>−</b> para la fuente cuando se aproxima al observador;
+                <b>+</b> cuando se aleja.
+              </li>
+            </ul>
+
+            <h3>Caso particular: fuente en movimiento, observador en reposo</h3>
+            <p>
+              Este es el caso relevante para el prototipo, donde la fuente
+              sonora se desplaza y el teléfono (observador) permanece fijo.
+            </p>
+            <div class="card eq">
+              Fuente aproximándose: $$ f' = f\left(\dfrac{v}{v - v_s}\right)
+              \quad\text{(la frecuencia observada aumenta)} $$ Fuente
+              alejándose: $$ f' = f\left(\dfrac{v}{v + v_s}\right)
+              \quad\text{(la frecuencia observada disminuye)} $$
+            </div>
+
+            <h3>Comprobación experimental</h3>
+            <p>
+              La demostración se realiza mediante un circuito generador de
+              sonido con frecuencia conocida y Phyphox como sistema de registro.
+              El movimiento relativo entre la fuente y el receptor permite
+              observar variaciones en la frecuencia registrada, comprobando el
+              comportamiento predicho por la ecuación general. El análisis de
+              frecuencia distingue este fenómeno de otros cambios acústicos: la
+              intensidad o el nivel de decibelios pueden variar con la
+              distancia, pero el efecto Doppler se caracteriza específicamente
+              por la modificación de la frecuencia percibida.
+            </p>
+
+            <h3>Aplicaciones</h3>
+            <ul>
+              <li>
+                <b>Medicina:</b> ecografía Doppler para analizar el flujo
+                sanguíneo.
+              </li>
+              <li>
+                <b>Astronomía:</b> desplazamiento de frecuencia de la luz para
+                inferir el movimiento relativo de estrellas y galaxias.
+              </li>
+              <li>
+                <b>Radares de velocidad, meteorología y navegación:</b>
+                determinación de velocidades mediante el cambio de frecuencia
+                entre la señal emitida y la recibida.
+              </li>
+            </ul>
+
+            <div class="related">
+              <a href="#m7">Ver módulo 07 · Uso de Phyphox</a>
+              <a href="#m4">Ver módulo 04 · Ondas sonoras</a>
+            </div>
+          </section>
+
+          <!-- ============ MODULE 6 (PENDING) ============ -->
+          <section class="module reveal" id="m6">
+            <div class="module-kicker"><div class="module-index">06</div></div>
+            <h2>Implementación del material didáctico</h2>
+            <p class="subtitle">Del diseño a la construcción del prototipo</p>
+
+            <div class="callout pending">
+              <b
+                >Sección pendiente de completar con contenido propio del
+                proyecto.</b
+              >
+              El marco teórico disponible no incluye aún el detalle de diseño
+              físico, lista de componentes específicos, procedimiento de montaje
+              ni fotografías del prototipo construido. La estructura de esta
+              sección ya está lista para recibir esa información:
+            </div>
+            <ul>
+              <li>Diseño del prototipo y justificación de componentes.</li>
+              <li>Procedimiento de montaje paso a paso.</li>
+              <li>Pruebas realizadas y ajustes durante la construcción.</li>
+              <li>Funcionamiento final verificado.</li>
+            </ul>
+            <div class="gallery">
+              <figure>
+                <img
+                  src="graficas/anexo1.jpg"
+                  alt="Simulación del circuito en Proteus"
+                />
+
+                <figcaption>
+                  <strong>Figura 1.</strong> Simulación del circuito electrónico
+                  en Proteus.
+                </figcaption>
+              </figure>
+
+              <figure>
+                <img src="graficas/anexo2.jpg" alt="Diseño PCB" />
+
+                <figcaption>
+                  <strong>Figura 2.</strong> Diseño de la placa de circuito
+                  impreso (PCB).
+                </figcaption>
+              </figure>
+
+              <figure>
+                <img src="graficas/anexo3.jpg" alt="Prototipo implementado" />
+
+                <figcaption>
+                  <strong>Figura 3.</strong> Implementación física del material
+                  didáctico basado en Arduino Uno y sensor ultrasónico.
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- ============ MODULE 7 ============ -->
+          <section class="module reveal" id="m7">
+            <div class="module-kicker"><div class="module-index">07</div></div>
+            <h2>Uso de Phyphox</h2>
+            <p class="subtitle">El laboratorio dentro del teléfono</p>
+
+            <p>
+              Phyphox es una aplicación móvil desarrollada por la Universidad
+              RWTH Aachen que permite usar los sensores incorporados en los
+              teléfonos inteligentes como herramientas de medición para
+              experimentos físicos, transformando el dispositivo en un
+              laboratorio portátil capaz de registrar, procesar y analizar
+              magnitudes físicas en tiempo real.
+            </p>
+
+            <h3>Funciones principales</h3>
+            <ul>
+              <li>Registro de datos de sensores internos del dispositivo.</li>
+              <li>Visualización gráfica de mediciones en tiempo real.</li>
+              <li>Análisis matemático de señales físicas.</li>
+              <li>Exportación de datos para procesamiento posterior.</li>
+              <li>Creación de experimentos personalizados.</li>
+            </ul>
+
+            <h3>El micrófono como sensor acústico</h3>
+            <p>
+              El micrófono actúa como transductor: convierte las variaciones de
+              presión de una onda sonora en una señal eléctrica procesable
+              digitalmente. En Phyphox, esto habilita tres experimentos
+              acústicos relevantes:
+            </p>
+            <table class="compare-table">
+              <tr>
+                <th>Experimento</th>
+                <th>Qué mide</th>
+              </tr>
+              <tr>
+                <td>Audio Spectrum</td>
+                <td>
+                  Distribución de frecuencias de la señal (vía Transformada de
+                  Fourier).
+                </td>
+              </tr>
+              <tr>
+                <td>Audio Amplitude</td>
+                <td>Variación de amplitud / nivel de la señal captada.</td>
+              </tr>
+              <tr>
+                <td>Autocorrelation</td>
+                <td>Estimación de la frecuencia dominante de la señal.</td>
+              </tr>
+            </table>
+
+            <h3>Análisis del espectro de frecuencia</h3>
+            <p>
+              El análisis espectral identifica la frecuencia predominante de una
+              onda, permitiendo comparar la frecuencia emitida por la fuente con
+              la registrada por el receptor:
+            </p>
+            <div class="card eq">
+              $$ \Delta f = f' - f $$
+              <div class="vars">
+                Si la fuente se acerca: <code>f′ &gt; f</code>. Si se aleja:
+                <code>f′ &lt; f</code>.
+              </div>
+            </div>
+
+            <h3>Procedimiento experimental sugerido</h3>
+            <div class="timeline">
+              <div class="tstep">
+                <div class="tdot"></div>
+                <div>
+                  <b>1. Configurar la fuente</b>
+                  <p>
+                    Establecer una frecuencia conocida y constante en el
+                    circuito generador.
+                  </p>
+                </div>
+              </div>
+              <div class="tstep">
+                <div class="tdot"></div>
+                <div>
+                  <b>2. Activar el espectro en Phyphox</b>
+                  <p>
+                    Iniciar el experimento Audio Spectrum o Autocorrelation.
+                  </p>
+                </div>
+              </div>
+              <div class="tstep">
+                <div class="tdot"></div>
+                <div>
+                  <b>3. Ubicar el receptor</b>
+                  <p>Colocar el teléfono como punto fijo de recepción.</p>
+                </div>
+              </div>
+              <div class="tstep">
+                <div class="tdot"></div>
+                <div>
+                  <b>4. Aproximar la fuente</b>
+                  <p>
+                    Registrar la frecuencia observada durante el acercamiento.
+                  </p>
+                </div>
+              </div>
+              <div class="tstep">
+                <div class="tdot"></div>
+                <div>
+                  <b>5. Alejar la fuente</b>
+                  <p>Registrar nuevamente la frecuencia observada.</p>
+                </div>
+              </div>
+              <div class="tstep">
+                <div class="tdot"></div>
+                <div>
+                  <b>6. Comparar</b>
+                  <p>
+                    Contrastar los valores obtenidos con la frecuencia emitida
+                    original.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              Se espera que la frecuencia observada aumente durante el
+              acercamiento y disminuya durante el alejamiento, confirmando el
+              comportamiento predicho por la ecuación del efecto Doppler. Cabe
+              señalar que la calibración del micrófono, el modelo del
+              dispositivo y las condiciones del entorno afectan la precisión,
+              por lo que Phyphox se considera una herramienta educativa y
+              experimental antes que un instrumento profesional de medición.
+            </p>
+
+            <div class="related">
+              <a href="#m5">Ver módulo 05 · Efecto Doppler</a>
+              <a href="#m9">Ver módulo 09 · Resultados esperados</a>
+            </div>
+          </section>
+
+          <!-- ============ MODULE 8 (PENDING) ============ -->
+          <section class="module reveal" id="m8">
+            <div class="module-kicker"><div class="module-index">08</div></div>
+            <h2>Metodología</h2>
+            <p class="subtitle">Ruta metodológica de la investigación</p>
+
+            <p>
+              La presente investigación se desarrolló con el propósito de
+              diseñar, implementar y evaluar un material didáctico basado en
+              circuitos electrónicos para la enseñanza del efecto Doppler. La
+              metodología empleada permitió integrar procedimientos de
+              investigación que facilitaron el análisis tanto del funcionamiento
+              del recurso didáctico como de la percepción de los estudiantes
+              durante su implementación.
+            </p>
+
+            <div class="card">
+              <h3>Enfoque de la investigación</h3>
+
+              <p>
+                La investigación posee un <b>enfoque mixto</b>, ya que combina
+                métodos cuantitativos y cualitativos. El componente cuantitativo
+                permitió evaluar la aceptación del material didáctico mediante
+                encuestas, mientras que el enfoque cualitativo facilitó analizar
+                la experiencia, participación e interacción de los estudiantes
+                durante las actividades experimentales.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Diseño de la investigación</h3>
+
+              <p>
+                Se empleó un <b>diseño no experimental de campo</b>, debido a
+                que el estudio se desarrolló en un contexto educativo real sin
+                manipular las variables de investigación. El proceso comprendió
+                el diseño, implementación y evaluación del material didáctico
+                durante una clase de Física.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Nivel de la investigación</h3>
+
+              <p>
+                El estudio corresponde a un <b>nivel descriptivo</b>, ya que
+                busca describir las características, funcionamiento y utilidad
+                del material didáctico, así como la percepción de los
+                estudiantes respecto a su utilización en el proceso de
+                enseñanza-aprendizaje.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Tipo de investigación</h3>
+
+              <table class="compare-table">
+                <tr>
+                  <th>Clasificación</th>
+                  <th>Descripción</th>
+                </tr>
+
+                <tr>
+                  <td>Aplicada</td>
+                  <td>
+                    Busca solucionar una necesidad educativa mediante el diseño
+                    de un material didáctico para la enseñanza del efecto
+                    Doppler.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>De campo</td>
+                  <td>
+                    La información se obtuvo directamente en el contexto
+                    educativo donde se implementó el recurso didáctico.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Transversal</td>
+                  <td>
+                    La recolección de datos se realizó en un único periodo de
+                    tiempo durante la implementación del proyecto.
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="card">
+              <h3>Población y muestra</h3>
+
+              <p>
+                Tanto la población como la muestra estuvieron conformadas por
+                los estudiantes de quinto semestre de la carrera de
+                <b
+                  >Pedagogía de la Matemática y la Física de la Universidad
+                  Nacional de Chimborazo</b
+                >, quienes participaron en la implementación y evaluación del
+                material didáctico.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Técnicas e instrumentos</h3>
+
+              <table class="compare-table">
+                <tr>
+                  <th>Técnica</th>
+                  <th>Instrumento</th>
+                </tr>
+
+                <tr>
+                  <td>Observación directa</td>
+                  <td>Guía de observación</td>
+                </tr>
+
+                <tr>
+                  <td>Encuesta</td>
+                  <td>Cuestionario con escala de Likert</td>
+                </tr>
+              </table>
+
+              <p>
+                La observación permitió registrar el desempeño y la interacción
+                de los estudiantes durante el uso del material didáctico,
+                mientras que la encuesta permitió evaluar el nivel de
+                satisfacción, la comprensión del tema y la utilidad del recurso
+                para el aprendizaje.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Procesamiento de datos</h3>
+
+              <p>
+                Los datos cuantitativos fueron organizados y analizados mediante
+                Microsoft Excel, utilizando tablas y gráficos de frecuencias y
+                porcentajes. La información obtenida mediante la observación fue
+                interpretada cualitativamente para analizar el comportamiento,
+                participación y experiencia de los estudiantes durante la
+                implementación del material didáctico.
+              </p>
+            </div>
+
+            <div class="callout">
+              <b>Resumen metodológico</b>
+
+              <ul>
+                <li><b>Enfoque:</b> Mixto (cuantitativo y cualitativo).</li>
+
+                <li><b>Diseño:</b> No experimental de campo.</li>
+
+                <li><b>Nivel:</b> Descriptivo.</li>
+
+                <li><b>Tipo:</b> Aplicada, de campo y transversal.</li>
+
+                <li>
+                  <b>Población y muestra:</b> Estudiantes de quinto semestre de
+                  Pedagogía de la Matemática y la Física (UNACH).
+                </li>
+
+                <li><b>Técnicas:</b> Observación directa y encuesta.</li>
+
+                <li>
+                  <b>Instrumentos:</b> Guía de observación y cuestionario con
+                  escala de Likert.
+                </li>
+
+                <li>
+                  <b>Procesamiento:</b> Análisis descriptivo e interpretación
+                  cualitativa.
+                </li>
+              </ul>
+            </div>
+
+            <div class="related">
+              <a href="#m6">Ver módulo 06 · Implementación del material</a>
+              <a href="#m9">Ver módulo 09 · Resultados esperados</a>
+            </div>
+          </section>
+
+          <!-- ============ MODULE 9 (PENDING) ============ -->
+          <section class="module reveal" id="m9">
+            <div class="card">
+              <h3>🎥 Demostración del funcionamiento</h3>
+
+              <p>
+                En el siguiente video se observa el funcionamiento del material
+                didáctico implementado para la demostración del efecto Doppler.
+                Durante la prueba se evidencia la respuesta del sensor
+                ultrasónico y la activación progresiva de los indicadores LED
+                conforme varía la distancia del objeto.
+              </p>
+
+              <video controls width="100%" preload="metadata">
+                <source src="graficas/video1.mp4" type="video/mp4" />
+
+                Tu navegador no soporta videos HTML5.
+              </video>
+            </div>
+          </section>
+        </div>
+        <!-- /content-wrap -->
+
+        <!-- ============ MODULE 10 — BIBLIOGRAPHY ============ -->
+        <section class="module reveal" id="m10">
+          <div class="content-wrap">
+            <div class="module-kicker"><div class="module-index">10</div></div>
+            <h2>Bibliografía</h2>
+            <p class="subtitle">Referencias en formato APA 7</p>
+
+            <div class="ref-group">
+              <h4>Libros</h4>
+              <div class="ref-item">
+                Area Moreira, M. (2010).
+                <i
+                  >El proceso de integración y uso pedagógico de las TIC en los
+                  centros educativos.</i
+                >
+                Universidad de La Laguna.
+              </div>
+              <div class="ref-item">
+                Cabero Almenara, J. (2015).
+                <i
+                  >Tecnología educativa: diseño y utilización de medios en la
+                  enseñanza.</i
+                >
+                Síntesis.
+              </div>
+              <div class="ref-item">
+                French, A. P. (1971). <i>Vibraciones y ondas.</i> Reverté.
+              </div>
+              <div class="ref-item">
+                Halliday, D., Resnick, R., &amp; Walker, J. (2014).
+                <i>Fundamentals of physics</i> (10.ª ed.). Wiley.
+              </div>
+              <div class="ref-item">
+                Moreno, I. (2017).
+                <i>El diseño de materiales didácticos.</i> Editorial Síntesis.
+              </div>
+              <div class="ref-item">
+                Prensky, M. (2012).
+                <i
+                  >From digital natives to digital wisdom: Hopeful essays for
+                  21st century learning.</i
+                >
+                Corwin.
+              </div>
+              <div class="ref-item">
+                Serway, R. A., &amp; Jewett, J. W. (2018).
+                <i>Physics for scientists and engineers with modern physics</i>
+                (10.ª ed.). Cengage Learning.
+              </div>
+              <div class="ref-item">
+                Tipler, P. A., &amp; Mosca, G. (2010).
+                <i>Física para la ciencia y la tecnología</i> (6.ª ed.).
+                Reverté.
+              </div>
+              <div class="ref-item">
+                Young, H. D., &amp; Freedman, R. A. (2016).
+                <i>University physics with modern physics</i> (14.ª ed.).
+                Pearson.
+              </div>
+            </div>
+
+            <div class="ref-group">
+              <h4>Artículos científicos</h4>
+              <div class="ref-item">
+                Moreira, M. A. (2017). Aprendizaje significativo como un
+                referente para la organización de la enseñanza.
+                <i>Archivos de Ciencias de la Educación, 11</i>(12), 1–16.
+              </div>
+              <div class="ref-item">
+                Staacks, S., Hütz, S., Heinke, H., &amp; Stampfer, C. (2018).
+                Advanced tools for smartphone-based experiments: Phyphox.
+                <i>Physics Education, 53</i>(4), 045009.
+              </div>
+            </div>
+
+            <div class="ref-group">
+              <h4>Recursos digitales y documentación técnica</h4>
+              <div class="ref-item">
+                Arduino. (2024). <i>Arduino documentation.</i>
+                <a href="https://docs.arduino.cc" target="_blank" rel="noopener"
+                  >docs.arduino.cc</a
+                >
+              </div>
+              <div class="ref-item">
+                Team, P. (2025).
+                <i>Phyphox: Physical phone experiments.</i> RWTH Aachen
+                University.
+                <a href="https://phyphox.org" target="_blank" rel="noopener"
+                  >phyphox.org</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ MODULE 11 — ANEXOS ============ -->
+        <section class="module reveal" id="m11">
+          <div class="card">
+            <h3>📷 Evidencias del proyecto</h3>
+
+            <p>
+              A continuación se presentan las principales evidencias del diseño,
+              simulación, construcción e implementación del material didáctico
+              basado en circuitos electrónicos para la enseñanza del efecto
+              Doppler.
+            </p>
+
+            <div class="gallery">
+              <figure>
+                <img
+                  src="graficas/anexo1.jpg"
+                  alt="Simulación del circuito en Proteus"
+                />
+                <figcaption>
+                  <strong>Figura 1.</strong> Simulación del circuito electrónico
+                  en Proteus, donde se observa la conexión entre el Arduino Uno,
+                  el sensor ultrasónico HC-SR04 y el sistema de LEDs
+                  indicadores.
+                </figcaption>
+              </figure>
+
+              <figure>
+                <img src="graficas/anexo2.jpg" alt="Diseño PCB" />
+
+                <figcaption>
+                  <strong>Figura 2.</strong> Diseño de la placa de circuito
+                  impreso (PCB) desarrollada para el montaje del prototipo.
+                </figcaption>
+              </figure>
+
+              <figure>
+                <img src="graficas/anexo3.jpg" alt="Prototipo físico" />
+
+                <figcaption>
+                  <strong>Figura 3.</strong> Implementación física del material
+                  didáctico construido con Arduino Uno, sensor ultrasónico y
+                  sistema de indicadores LED.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <div>
+            Wiki de investigación formativa · Diseño e implementación de un
+            material didáctico basado en circuitos electrónicos para la
+            enseñanza del efecto Doppler.
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <div id="backTop">↑</div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
