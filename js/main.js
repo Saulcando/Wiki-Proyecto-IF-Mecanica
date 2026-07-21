@@ -182,3 +182,20 @@ searchInput.addEventListener('input', (e)=>{
   labelRight.textContent = 'ondas espaciadas (f\' < f)';
   svg.appendChild(labelRight);
 })();
+// ---------- Efecto Máquina de Escribir ----------
+const text = "Universidad Nacional de Chimborazo";
+const typingText = document.getElementById("typing-text");
+
+let index = 0;
+
+function typeWriter() {
+
+    if(index < text.length){
+        typingText.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 80);
+    }
+
+}
+
+typeWriter();
